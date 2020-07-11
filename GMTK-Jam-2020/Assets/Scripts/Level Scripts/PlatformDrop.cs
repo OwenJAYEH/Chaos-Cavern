@@ -10,7 +10,7 @@ public class PlatformDrop : MonoBehaviour
 
     public void StartOver()
     {
-        countDownTimer = 0f;
+        countDownTimer = 2f;
     }
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D col)
@@ -27,13 +27,15 @@ public class PlatformDrop : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        countDownTimer = 0f;
+        //countDownTimer = 1f;
     }
 
     void Update()
     {
         if (countDownTimer < -2f)
         {
+            GetComponent<Renderer>().enabled = true;
+            GetComponent<BoxCollider2D>().enabled = true;
             playerEnter = false;
             countDownTimer = 2f;
         }
@@ -49,11 +51,11 @@ public class PlatformDrop : MonoBehaviour
             countDownTimer -= 1 * Time.deltaTime;
         }
 
-        if (playerEnter == false)
-        {
-            GetComponent<Renderer>().enabled = true;
-            GetComponent<BoxCollider2D>().enabled = true;
-        }
+        //if (playerEnter == false)
+        //{
+        //    GetComponent<Renderer>().enabled = true;
+        //    GetComponent<BoxCollider2D>().enabled = true;
+        //}
 
         print(countDownTimer);
     }
