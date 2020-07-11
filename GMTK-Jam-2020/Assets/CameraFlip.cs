@@ -6,6 +6,16 @@ public class CameraFlip : MonoBehaviour
 {
 
     public bool flipCamera = false;
+
+    public void flipCameraToggleOn()
+    {
+        flipCamera = true;
+    }
+    public void flipCameraToggleOff()
+    {
+        flipCamera = false;
+    }
+
     void Update()
     {
 
