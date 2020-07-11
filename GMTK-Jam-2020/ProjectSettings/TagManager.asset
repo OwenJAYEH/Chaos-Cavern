@@ -47,3 +47,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: crystal
+    uniqueID: 1407851747
+    locked: 0
+  - name: player
+    uniqueID: 2773937535
+    locked: 0
+  - name: platform
+    uniqueID: 852328527
+    locked: 0
