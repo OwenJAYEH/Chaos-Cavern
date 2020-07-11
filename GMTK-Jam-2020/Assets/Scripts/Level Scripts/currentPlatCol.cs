@@ -6,6 +6,8 @@ using UnityEngine;
 public class currentPlatCol : MonoBehaviour
 {
     public PlatformManager PlatformManagerScript;
+    public GameManagerScript GameManager;
+    public EventRandomizer RandomizerScript;
 
     bool playerOneGoal = false;
     bool playerTwoGoal = false;
@@ -45,6 +47,10 @@ public class currentPlatCol : MonoBehaviour
         if (playerTwoGoal == true && playerOneGoal == true)
         {
             PlatformManagerScript.NewPlatform();
+            GameManager.AddPoint();
+            RandomizerScript.Randomizer();
+            playerTwoGoal = false;
+            playerOneGoal = false;
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerTwoMirrorMovement : MonoBehaviour
 {
     // Initialized public variables for use inside of the inspector
-    public PlayerOneCharacterController2D controller;
+    public PlayerTwoCharacterController2D controller;
 
     // Initialized variables
     // Variable for player run speed
@@ -23,10 +23,10 @@ public class PlayerTwoMirrorMovement : MonoBehaviour
     void Update()
     {
         // Uses players input of A and D keys to move character in FixedUpdate
-        horizontalMove = Input.GetAxisRaw("p1Horizontal") * -runSpeed;
+        horizontalMove = Input.GetAxisRaw("p2Horizontal") * -runSpeed;
 
         // Uses players input of SpaceBar to make the character Jump
-        if (Input.GetButtonDown("P1Jump"))
+        if (Input.GetButtonDown("P2Jump"))
         {
             jump = true;
         }

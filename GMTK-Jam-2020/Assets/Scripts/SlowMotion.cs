@@ -13,6 +13,15 @@ public class SlowMotion : MonoBehaviour
 
     bool slowMoBool = true;
 
+    public void slowMoToggleOn()
+    {
+        frozen = true;
+    }
+    public void slowMoToggleOff()
+    {
+        frozen = false;
+    }
+
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();

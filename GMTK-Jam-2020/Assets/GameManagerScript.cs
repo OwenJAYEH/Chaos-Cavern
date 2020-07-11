@@ -19,15 +19,4 @@ public class GameManagerScript : MonoBehaviour
         print(points);
     }
 
-    void Update()
-    {
-        switch (points)
-        {
-            case 0:
-                break;
-            case 1:
-                print("Random Event Engaged");
-                break;
-        }
-    }
 }
