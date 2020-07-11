@@ -14,7 +14,7 @@ public class EventRandomizer : MonoBehaviour
 
     public void Randomizer()
     {
-        randomizedInt = Random.Range(0, 2);
+        randomizedInt = Random.Range(0, 3);
 
         PlatformManagerScript.dropBoolToggleOff();
         CameraFlipScript.flipCameraToggleOff();
