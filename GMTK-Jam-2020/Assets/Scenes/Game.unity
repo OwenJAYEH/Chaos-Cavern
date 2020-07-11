@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2769b92ad5754948b6b16d0da84d2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1245978939}
+  controller: {fileID: 151941643}
   runSpeed: 100
   tripleSpeed: 0
 --- !u!1 &177565338
@@ -1993,6 +1993,10 @@ MonoBehaviour:
   PlatformManagerScript: {fileID: 1392231675}
   SlowMotionP1Script: {fileID: 1245978943}
   SlowMotionP2Script: {fileID: 151941646}
+  PlayerOneScript: {fileID: 1245978942}
+  PlayerTwoScript: {fileID: 151941640}
+  PlayerOne: {fileID: 1245978936}
+  PlayerTwo: {fileID: 151941639}
   randomizedInt: 0
 --- !u!114 &519420034
 MonoBehaviour:
