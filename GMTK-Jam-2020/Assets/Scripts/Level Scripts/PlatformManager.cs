@@ -14,6 +14,7 @@ public class PlatformManager : MonoBehaviour
     // GameObject for the collision of currently selected platform
     public GameObject currentPlatCol;
     public GameObject currentPlatLight;
+    public GameObject purpleCrystal;
 
     public void dropBoolToggleOn()
     {
@@ -33,7 +34,8 @@ public class PlatformManager : MonoBehaviour
         currentPlatform = platforms[index]; // registers random platform as the one the player must get to
         print(currentPlatform.name); // Prints name for debug purposes
         currentPlatCol.transform.position = new Vector2 (currentPlatform.transform.position.x, currentPlatform.transform.position.y + .45f); // Moves collission to platform and adds height
-        currentPlatLight.transform.position = currentPlatCol.transform.position;                                                            // to make it only reachable from the top
+        currentPlatLight.transform.position = currentPlatCol.transform.position;
+        purpleCrystal.transform.position = new Vector2(currentPlatform.transform.position.x + .5f, currentPlatform.transform.position.y + .6f);                                                                                                                                      // to make it only reachable from the top
     }
 
     // Function repeats the process above
@@ -43,6 +45,7 @@ public class PlatformManager : MonoBehaviour
       currentPlatform = platforms[index];
       currentPlatCol.transform.position = new Vector2(currentPlatform.transform.position.x, currentPlatform.transform.position.y + .45f);
       currentPlatLight.transform.position = currentPlatCol.transform.position;
+      purpleCrystal.transform.position = new Vector2(currentPlatform.transform.position.x + .5f, currentPlatform.transform.position.y + .6f);
     }
 
     void Update()
