@@ -30,7 +30,18 @@ public class PlayerOneCharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
-	private void Awake()
+    public bool doubleJump;
+
+    public void doubleJumpToggleOn()
+    {
+        doubleJump = true;
+    }
+    public void doubleJumpToggleOff()
+    {
+        doubleJump = false;
+    }
+
+    private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -124,12 +135,16 @@ public class PlayerOneCharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (m_Grounded && jump)
+		if (m_Grounded && jump && doubleJump == false)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-		}
+		} else if (m_Grounded && jump && doubleJump == true)
+        {
+            m_Grounded = false;
+            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce)*2);
+        }
 	}
 
 
