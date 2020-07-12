@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -628,10 +628,10 @@ GameObject:
   m_Component:
   - component: {fileID: 151941645}
   - component: {fileID: 151941644}
-  - component: {fileID: 151941640}
-  - component: {fileID: 151941642}
   - component: {fileID: 151941643}
+  - component: {fileID: 151941642}
   - component: {fileID: 151941641}
+  - component: {fileID: 151941640}
   - component: {fileID: 151941647}
   - component: {fileID: 151941646}
   m_Layer: 9
@@ -654,6 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 151941643}
+  animator: {fileID: 931355177}
   runSpeed: 100
   tripleSpeed: 0
 --- !u!61 &151941641
@@ -727,10 +728,22 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 151941640}
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  doubleJump: 0
 --- !u!212 &151941644
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2729,8 +2742,29 @@ MonoBehaviour:
   SlowMotionP2Script: {fileID: 151941646}
   PlayerOneScript: {fileID: 1245978942}
   PlayerTwoScript: {fileID: 151941640}
+  PlayerOneBouncyScript: {fileID: 0}
+  PlayerTwoBouncyScript: {fileID: 0}
+  PlayerOneCC: {fileID: 0}
+  PlayerTwoCC: {fileID: 0}
   PlayerOne: {fileID: 1245978936}
   PlayerTwo: {fileID: 151941639}
+  bg_normal: {fileID: 0}
+  bg_bouncy: {fileID: 0}
+  bg_mirror: {fileID: 0}
+  bg_doubleJump: {fileID: 0}
+  bg_speed: {fileID: 0}
+  bg_slow: {fileID: 0}
+  bg_fall: {fileID: 0}
+  bg_ice: {fileID: 0}
+  canvas_slow: {fileID: 0}
+  canvas_icy: {fileID: 0}
+  canvas_bouncy: {fileID: 0}
+  canvas_vanish: {fileID: 0}
+  canvas_jumpy: {fileID: 0}
+  canvas_fast: {fileID: 0}
+  canvas_mirror: {fileID: 0}
+  canvas_flip: {fileID: 0}
+  canvas_random: {fileID: 0}
   randomizedInt: 0
 --- !u!114 &519420034
 MonoBehaviour:
@@ -4342,10 +4376,22 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1245978942}
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  doubleJump: 0
 --- !u!50 &1245978940
 Rigidbody2D:
   serializedVersion: 4
@@ -4406,6 +4452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1245978939}
+  animator: {fileID: 1944064551}
   runSpeed: 100
   tripleSpeed: 0
 --- !u!114 &1245978943

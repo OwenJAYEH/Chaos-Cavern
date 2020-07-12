@@ -6,6 +6,7 @@ public class PlayerTwoMovement : MonoBehaviour
 {
     // Initialized public variables for use inside of the inspector
     public PlayerTwoCharacterController2D controller;
+    public Animator animator;
 
     // Initialized variables
     // Variable for player run speed
@@ -34,10 +35,13 @@ public class PlayerTwoMovement : MonoBehaviour
         // Uses players input of A and D keys to move character in FixedUpdate
         horizontalMove = Input.GetAxisRaw("p2Horizontal") * runSpeed;
 
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
         // Uses players input of SpaceBar to make the character Jump
         if (Input.GetButtonDown("P2Jump"))
         {
             jump = true;
+            animator.SetBool("IsJumping", true);
         }
 
         // EVENTS TRIGGERED WHEN PLAYER SCORES A POINT
@@ -52,6 +56,11 @@ public class PlayerTwoMovement : MonoBehaviour
                 runSpeed = 300f;
                 break;
         }
+    }
+
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
     }
 
     void FixedUpdate()

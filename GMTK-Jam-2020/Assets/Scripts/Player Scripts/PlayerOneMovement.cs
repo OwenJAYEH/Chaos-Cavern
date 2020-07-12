@@ -6,6 +6,7 @@ public class PlayerOneMovement : MonoBehaviour
 {
     // Initialized public variables for use inside of the inspector
         public PlayerOneCharacterController2D controller;
+    public Animator animator;
 
     // Initialized variables
         // Variable for player run speed
@@ -36,10 +37,14 @@ public class PlayerOneMovement : MonoBehaviour
         // Uses players input of A and D keys to move character in FixedUpdate
         horizontalMove = Input.GetAxisRaw("p1Horizontal") * runSpeed;
 
+        // gets horizontal movement speed and tells the animator.
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
         // Uses players input of SpaceBar to make the character Jump
         if (Input.GetButtonDown("P1Jump"))
         {
             jump = true;
+            animator.SetBool("IsJumping", true);
         }
 
         // EVENTS TRIGGERED WHEN PLAYER SCORES A POINT
@@ -55,6 +60,11 @@ public class PlayerOneMovement : MonoBehaviour
                 runSpeed = 300f;
                 break;
         }
+    }
+
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
     }
 
     void FixedUpdate()
