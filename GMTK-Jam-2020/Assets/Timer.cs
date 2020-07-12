@@ -31,6 +31,7 @@ public class Timer : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 SceneManager.LoadScene("GameOver");
+                // Hi JARNE <3
             }
         }
     }
