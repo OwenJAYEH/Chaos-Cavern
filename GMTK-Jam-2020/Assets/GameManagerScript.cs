@@ -15,7 +15,7 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
-        points = 0;
+        points = 0;      
     }
 
     public void AddPoint()
