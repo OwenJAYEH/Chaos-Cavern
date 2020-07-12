@@ -14,6 +14,9 @@ public class ExitGameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey) SceneManager.LoadScene("TitleScreen");
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("TitleScreen");
+        }
+            
     }
 }
