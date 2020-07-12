@@ -50,4 +50,9 @@ public class Timer : MonoBehaviour
     {
         timeRemaining += 5;
     }
+
+    public void AddTen()
+    {
+        timeRemaining += 10;
+    }
 }

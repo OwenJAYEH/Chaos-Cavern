@@ -10,6 +10,7 @@ public class PlatformManager : MonoBehaviour
     GameObject currentPurpPlatform;
     int index;
     int purpIndex;
+    int greenChance;
 
     public bool DropEvent = false;
 
@@ -18,6 +19,8 @@ public class PlatformManager : MonoBehaviour
     public GameObject currentPlatLight;
     public GameObject purpleCrystal;
     public GameObject greenCrystal;
+    
+
 
     public void dropBoolToggleOn()
     {
@@ -42,12 +45,19 @@ public class PlatformManager : MonoBehaviour
         currentPlatCol.transform.position = new Vector2 (currentPlatform.transform.position.x, currentPlatform.transform.position.y + .45f); // Moves collission to platform and adds height
         currentPlatLight.transform.position = currentPlatCol.transform.position;
         purpleCrystal.transform.position = new Vector2(currentPlatform.transform.position.x + .5f, currentPlatform.transform.position.y + .6f);
-        greenCrystal.transform.position = new Vector2(currentPurpPlatform.transform.position.x + .5f, currentPurpPlatform.transform.position.y + .6f); // to make it only reachable from the top
+        greenCrystal.transform.position = new Vector2(currentPurpPlatform.transform.position.x, currentPurpPlatform.transform.position.y+1.2f); // to make it only reachable from the top
     }
 
     // Function repeats the process above
     public void NewPlatform()
     {
+        greenChance = Random.Range(0, 5);
+      if (greenChance == 0)
+        {
+            greenCrystal.SetActive(true);
+        }
+      
+    
       index = Random.Range(0, platforms.Length);
       currentPlatform = platforms[index];
       purpIndex = index = Random.Range(0, platforms.Length);
@@ -55,7 +65,7 @@ public class PlatformManager : MonoBehaviour
       currentPlatCol.transform.position = new Vector2(currentPlatform.transform.position.x, currentPlatform.transform.position.y + .45f);
       currentPlatLight.transform.position = currentPlatCol.transform.position;
       purpleCrystal.transform.position = new Vector2(currentPlatform.transform.position.x + .5f, currentPlatform.transform.position.y + .6f);
-      greenCrystal.transform.position = new Vector2(currentPurpPlatform.transform.position.x + .5f, currentPurpPlatform.transform.position.y + .6f); // to make it only reachable from the top
+      greenCrystal.transform.position = new Vector2(currentPurpPlatform.transform.position.x, currentPurpPlatform.transform.position.y+1.2f); // to make it only reachable from the top
     }
 
     void Update()
