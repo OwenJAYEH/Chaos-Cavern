@@ -43,7 +43,7 @@ public class EventRandomizer : MonoBehaviour
 
     public void Randomizer()
     {
-        randomizedInt = Random.Range(0, 7);
+        randomizedInt = Random.Range(0, 8);
 
         PlatformManagerScript.dropBoolToggleOff();
         CameraFlipScript.flipCameraToggleOff();
@@ -130,9 +130,12 @@ public class EventRandomizer : MonoBehaviour
                 PlayerOneCC.doubleJumpToggleOn();
                 PlayerTwoCC.doubleJumpToggleOn();
                 break;
-
-
-
+            case 7:
+                print("Random Event Triggered");
+                bg_normal.SetActive(true);
+                canvas_random.SetActive(true);
+                PlatformManagerScript.RandomPlace();
+                break;
         }
     }
 }

@@ -5140,6 +5140,8 @@ MonoBehaviour:
   currentPlatLight: {fileID: 313018938}
   purpleCrystal: {fileID: 1833951136}
   greenCrystal: {fileID: 2144607147}
+  PlayerOne: {fileID: 1245978936}
+  PlayerTwo: {fileID: 151941639}
   tenSec: {fileID: 865518389}
 --- !u!1 &1393490825
 GameObject:

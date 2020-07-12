@@ -8,9 +8,15 @@ public class PlatformManager : MonoBehaviour
     GameObject[] platforms;
     GameObject currentPlatform;
     GameObject currentPurpPlatform;
+    GameObject currentP1Platform;
+    GameObject currentP2Platform;
     int index;
     int purpIndex;
+    int P1Index;
+    int P2Index;
     int greenChance;
+    int randomPlatP1;
+    int randomPlatP2;
 
     public bool DropEvent = false;
 
@@ -19,6 +25,9 @@ public class PlatformManager : MonoBehaviour
     public GameObject currentPlatLight;
     public GameObject purpleCrystal;
     public GameObject greenCrystal;
+
+    public GameObject PlayerOne;
+    public GameObject PlayerTwo;
 
 
     public GameObject tenSec;
@@ -51,6 +60,19 @@ public class PlatformManager : MonoBehaviour
         greenCrystal.transform.position = new Vector2(currentPurpPlatform.transform.position.x, currentPurpPlatform.transform.position.y+1.2f); // to make it only reachable from the top
     }
 
+    public void RandomPlace()
+    {
+        P1Index = Random.Range(0, platforms.Length);
+        P2Index = Random.Range(0, platforms.Length);
+        currentP1Platform = platforms[P1Index];
+        currentP2Platform = platforms[P2Index];
+
+        PlayerOne.transform.position = new Vector2(currentP1Platform.transform.position.x, currentP1Platform.transform.position.y + .5f);
+        PlayerTwo.transform.position = new Vector2(currentP2Platform.transform.position.x, currentP2Platform.transform.position.y + .5f);
+
+
+    }
+
     // Function repeats the process above
     public void NewPlatform()
     {
@@ -74,6 +96,7 @@ public class PlatformManager : MonoBehaviour
       purpleCrystal.transform.position = new Vector2(currentPlatform.transform.position.x + .5f, currentPlatform.transform.position.y + .6f);
       greenCrystal.transform.position = new Vector2(currentPurpPlatform.transform.position.x, currentPurpPlatform.transform.position.y+1.2f); // to make it only reachable from the top
     }
+
 
     void Update()
     {
