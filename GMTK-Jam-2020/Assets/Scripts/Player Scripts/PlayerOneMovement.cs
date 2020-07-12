@@ -28,6 +28,8 @@ public class PlayerOneMovement : MonoBehaviour
         tripleSpeed = false;
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
