@@ -7,6 +7,7 @@ public class PlatformDrop : MonoBehaviour
     float countDownTimer = 2f;
 
     bool playerEnter = false;
+    bool initialDrop = true;
 
     public void StartOver()
     {
@@ -15,14 +16,18 @@ public class PlatformDrop : MonoBehaviour
     // Update is called once per frame
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "PlayerOne")
+        if (initialDrop == true)
         {
-            playerEnter = true;
+            if (col.gameObject.tag == "PlayerOne")
+            {
+                playerEnter = true;
+            }
+            if (col.gameObject.tag == "PlayerTwo")
+            {
+                playerEnter = true;
+            }
         }
-        if (col.gameObject.tag == "PlayerTwo")
-        {
-            playerEnter = true;
-        }
+        
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -37,7 +42,9 @@ public class PlatformDrop : MonoBehaviour
             GetComponent<Renderer>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = true;
             playerEnter = false;
+            initialDrop = false;
             countDownTimer = 2f;
+            
         }
 
         if (countDownTimer < 0f)

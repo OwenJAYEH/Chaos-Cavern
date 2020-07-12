@@ -7,6 +7,7 @@ TagManager:
   - platform
   - PlayerOne
   - PlayerTwo
+  - purpplatform
   layers:
   - Default
   - TransparentFX
