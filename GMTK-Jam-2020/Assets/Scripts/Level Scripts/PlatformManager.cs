@@ -19,7 +19,10 @@ public class PlatformManager : MonoBehaviour
     public GameObject currentPlatLight;
     public GameObject purpleCrystal;
     public GameObject greenCrystal;
-    
+
+
+    public GameObject tenSec;
+
 
 
     public void dropBoolToggleOn()
@@ -51,6 +54,10 @@ public class PlatformManager : MonoBehaviour
     // Function repeats the process above
     public void NewPlatform()
     {
+
+        tenSec.SetActive(false);
+
+
         greenChance = Random.Range(0, 5);
       if (greenChance == 0)
         {

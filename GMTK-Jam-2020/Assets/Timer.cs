@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     public bool timerIsRunning = false;
     public TMPro.TextMeshPro timeText;
 
+    public GameObject tenSec;
+
     private void Start()
     {
         // Starts the timer automatically
@@ -54,5 +56,6 @@ public class Timer : MonoBehaviour
     public void AddTen()
     {
         timeRemaining += 10;
+        tenSec.SetActive(true);
     }
 }
