@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerOneMovement : MonoBehaviour
 {
+
     // Initialized public variables for use inside of the inspector
-        public PlayerOneCharacterController2D controller;
+    public PlayerOneCharacterController2D controller;
     public Animator animator;
 
     // Initialized variables
@@ -28,7 +29,6 @@ public class PlayerOneMovement : MonoBehaviour
     {
         tripleSpeed = false;
     }
-
 
 
     // Update is called once per frame

@@ -20,6 +20,7 @@ public class PlayerTwoMovement : MonoBehaviour
     // Boolean for Triple Speed Event
     public bool tripleSpeed = false;
 
+
     public void tripleSpeedToggleOn()
     {
         tripleSpeed = true;
