@@ -6,6 +6,9 @@ public class GameManagerScript : MonoBehaviour
 {
 
     public int points;
+    public int highScore = 0;
+    public TMPro.TextMeshPro highScoreText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,14 @@ public class GameManagerScript : MonoBehaviour
     {
         points += 1;
         print(points);
+        highScoreText.text = ("Score: ") + points.ToString();
+        
+        if (highScore < points)
+        {
+            highScore = points;
+        }
+
+        print("Highscore: " + highScore);
     }
 
 }

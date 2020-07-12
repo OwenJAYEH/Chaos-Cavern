@@ -8,6 +8,7 @@ public class currentPlatCol : MonoBehaviour
     public PlatformManager PlatformManagerScript;
     public GameManagerScript GameManager;
     public EventRandomizer RandomizerScript;
+    public Timer TimerScript;
 
     bool playerOneGoal = false;
     bool playerTwoGoal = false;
@@ -48,6 +49,7 @@ public class currentPlatCol : MonoBehaviour
         {
             PlatformManagerScript.NewPlatform();
             GameManager.AddPoint();
+            TimerScript.AddFive();
             RandomizerScript.Randomizer();
             playerTwoGoal = false;
             playerOneGoal = false;
